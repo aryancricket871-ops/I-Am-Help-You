@@ -1,0 +1,37 @@
+{
+  "name": "i-am-help-you",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "worker:dev": "wrangler dev",
+    "deploy": "npm run build && wrangler deploy",
+    "db:init": "wrangler d1 execute i-am-help-you-db --remote --file=./schema.sql",
+    "db:init:local": "wrangler d1 execute i-am-help-you-db --local --file=./schema.sql",
+    "build:app": "VITE_APP=1 vite build"
+  },
+  "dependencies": {
+    "hono": "^4.6.0",
+    "lucide-react": "^0.460.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.28.0",
+    "@capacitor/core": "^6.2.0",
+    "@capacitor/android": "^6.2.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241112.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.3",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.15",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11",
+    "wrangler": "^3.90.0",
+    "@capacitor/cli": "^6.2.0"
+  }
+  }
